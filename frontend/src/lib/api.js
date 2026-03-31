@@ -28,12 +28,36 @@ async function fetchApi(path, options = {}) {
 
 export async function generateTrip(constraints) {
   const headers = await getAuthHeaders();
+<<<<<<< HEAD
+  
+  // Create AbortController for timeout
+  const controller = new AbortController();
+  const timeoutId = setTimeout(() => controller.abort(), 60000); // 60 second timeout
+  
+  try {
+    const data = await fetchApi('/generate-trip', {
+      method: 'POST',
+      headers,
+      body: JSON.stringify(constraints),
+      signal: controller.signal,
+    });
+    clearTimeout(timeoutId);
+    return data;
+  } catch (error) {
+    clearTimeout(timeoutId);
+    if (error.name === 'AbortError') {
+      throw new Error('Request timed out. The AI service is taking too long to generate your trip. Please try again.');
+    }
+    throw error;
+  }
+=======
   const data = await fetchApi('/generate-trip', {
     method: 'POST',
     headers,
     body: JSON.stringify(constraints),
   });
   return data;
+>>>>>>> 5e98ea98945641a4596e1a4cbf8358e5f96d8908
 }
 
 export async function modifyTrip(previousTrip, userInstruction) {

@@ -3,9 +3,19 @@ import { createClient } from '@supabase/supabase-js';
 const supabaseUrl = import.meta.env.VITE_SUPABASE_URL || '';
 const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY || '';
 
+<<<<<<< HEAD
+console.log('supabase.js: url', supabaseUrl, 'key', !!supabaseAnonKey);
+
 export const supabase =
   supabaseUrl && supabaseAnonKey ? createClient(supabaseUrl, supabaseAnonKey) : null;
 
+console.log('supabase.js: supabase created', !!supabase);
+
+=======
+export const supabase =
+  supabaseUrl && supabaseAnonKey ? createClient(supabaseUrl, supabaseAnonKey) : null;
+
+>>>>>>> 5e98ea98945641a4596e1a4cbf8358e5f96d8908
 const rawApiUrl = import.meta.env.VITE_API_URL || '';
 export const API_BASE = rawApiUrl
   ? (rawApiUrl.endsWith('/api') ? rawApiUrl : `${rawApiUrl}/api`)

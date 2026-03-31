@@ -1,8 +1,18 @@
 import { Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
+<<<<<<< HEAD
+import { useEffect } from 'react';
+import { useToast } from '../components/Toast';
 
 export default function Landing() {
   const { user } = useAuth();
+  const { addToast } = useToast();
+
+=======
+
+export default function Landing() {
+  const { user } = useAuth();
+>>>>>>> 5e98ea98945641a4596e1a4cbf8358e5f96d8908
 
   return (
     <div className="relative min-h-[calc(100vh-4rem)] overflow-hidden">
@@ -33,6 +43,16 @@ export default function Landing() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               to="/plan"
+<<<<<<< HEAD
+              onClick={(e) => {
+                if (!user) {
+                  e.preventDefault();
+                  addToast('Please sign in before planning a trip', 'error');
+                  document.getElementById('auth-modal')?.showModal?.();
+                }
+              }}
+=======
+>>>>>>> 5e98ea98945641a4596e1a4cbf8358e5f96d8908
               className="btn-primary text-lg px-10 py-4 inline-flex items-center justify-center gap-2"
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

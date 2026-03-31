@@ -1,7 +1,15 @@
+<<<<<<< HEAD
+import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { generateTrip } from '../lib/api';
+import { useToast } from '../components/Toast';
+import { useAuth } from '../context/AuthContext';
+=======
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { generateTrip } from '../lib/api';
 import { useToast } from '../components/Toast';
+>>>>>>> 5e98ea98945641a4596e1a4cbf8358e5f96d8908
 
 const BUDGET_OPTIONS = [500, 1000, 2000];
 const DURATION_OPTIONS = [
@@ -25,7 +33,28 @@ const PREFERENCES = [
 export default function TripPlanner() {
   const navigate = useNavigate();
   const { addToast } = useToast();
+<<<<<<< HEAD
+  const { user } = useAuth();
   const [loading, setLoading] = useState(false);
+
+  if (!user) {
+    return (
+      <div className="max-w-2xl mx-auto px-4 py-20 text-center">
+        <h1 className="text-3xl font-bold text-white mb-4">Sign in to plan your trip</h1>
+        <p className="text-dark-muted mb-6">Please sign in before accessing the planner to start generating itineraries.</p>
+        <button
+          onClick={() => document.getElementById('auth-modal')?.showModal?.()}
+          className="btn-primary"
+        >
+          Sign in / Sign up
+        </button>
+      </div>
+    );
+  }
+
+=======
+  const [loading, setLoading] = useState(false);
+>>>>>>> 5e98ea98945641a4596e1a4cbf8358e5f96d8908
   const [form, setForm] = useState({
     destination: '',
     budget: 1000,
