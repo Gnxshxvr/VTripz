@@ -1,0 +1,15 @@
+{
+  "travel": {
+    "bus": { "min": 150, "max": 300, "perPerson": true },
+    "bike": { "min": 50, "max": 150, "perPerson": true },
+    "train": { "min": 80, "max": 200, "perPerson": true }
+  },
+  "food": {
+    "perMeal": 200,
+    "halfDayMeals": 1,
+    "fullDayMeals": 2,
+    "multiDayMealsPerDay": 2
+  },
+  "entry": { "min": 0, "max": 150 },
+  "buffer": 0.1
+}
