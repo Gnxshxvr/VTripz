@@ -1,8 +1,15 @@
+<<<<<<< HEAD
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { generateTrip } from '../lib/api';
 import { useToast } from '../components/Toast';
 import { useAuth } from '../context/AuthContext';
+=======
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { generateTrip } from '../lib/api';
+import { useToast } from '../components/Toast';
+>>>>>>> 5e98ea98945641a4596e1a4cbf8358e5f96d8908
 
 const BUDGET_OPTIONS = [500, 1000, 2000];
 const DURATION_OPTIONS = [
@@ -26,6 +33,7 @@ const PREFERENCES = [
 export default function TripPlanner() {
   const navigate = useNavigate();
   const { addToast } = useToast();
+<<<<<<< HEAD
   const { user } = useAuth();
   const [loading, setLoading] = useState(false);
 
@@ -44,6 +52,9 @@ export default function TripPlanner() {
     );
   }
 
+=======
+  const [loading, setLoading] = useState(false);
+>>>>>>> 5e98ea98945641a4596e1a4cbf8358e5f96d8908
   const [form, setForm] = useState({
     destination: '',
     budget: 1000,

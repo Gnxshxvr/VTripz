@@ -28,6 +28,7 @@ async function fetchApi(path, options = {}) {
 
 export async function generateTrip(constraints) {
   const headers = await getAuthHeaders();
+<<<<<<< HEAD
   
   // Create AbortController for timeout
   const controller = new AbortController();
@@ -49,6 +50,14 @@ export async function generateTrip(constraints) {
     }
     throw error;
   }
+=======
+  const data = await fetchApi('/generate-trip', {
+    method: 'POST',
+    headers,
+    body: JSON.stringify(constraints),
+  });
+  return data;
+>>>>>>> 5e98ea98945641a4596e1a4cbf8358e5f96d8908
 }
 
 export async function modifyTrip(previousTrip, userInstruction) {

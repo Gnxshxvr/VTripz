@@ -1,10 +1,14 @@
 import { Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
+<<<<<<< HEAD
 import { useToast } from './Toast';
+=======
+>>>>>>> 5e98ea98945641a4596e1a4cbf8358e5f96d8908
 import { useState } from 'react';
 
 export default function Navbar() {
   const { user, signOut } = useAuth();
+<<<<<<< HEAD
   const { addToast } = useToast();
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -20,6 +24,10 @@ export default function Navbar() {
     }
   };
 
+=======
+  const [menuOpen, setMenuOpen] = useState(false);
+
+>>>>>>> 5e98ea98945641a4596e1a4cbf8358e5f96d8908
   return (
     <nav className="bg-dark-bg/90 backdrop-blur-md border-b border-dark-border sticky top-0 z-50">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
@@ -35,7 +43,10 @@ export default function Navbar() {
           <div className="hidden md:flex items-center gap-6">
             <Link
               to="/plan"
+<<<<<<< HEAD
               onClick={requireAuth}
+=======
+>>>>>>> 5e98ea98945641a4596e1a4cbf8358e5f96d8908
               className="text-dark-text hover:text-primary-400 font-medium transition-colors"
             >
               Plan
@@ -82,7 +93,11 @@ export default function Navbar() {
 
         {menuOpen && (
           <div className="md:hidden py-4 border-t border-dark-border space-y-1">
+<<<<<<< HEAD
             <Link to="/plan" className="block py-2.5 text-dark-text hover:text-primary-400" onClick={(e) => { requireAuth(e); setMenuOpen(false); }}>
+=======
+            <Link to="/plan" className="block py-2.5 text-dark-text hover:text-primary-400" onClick={() => setMenuOpen(false)}>
+>>>>>>> 5e98ea98945641a4596e1a4cbf8358e5f96d8908
               Plan a Trip
             </Link>
             {user && (
